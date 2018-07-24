@@ -15,7 +15,7 @@ const argv = yargs
   .argv;
 
 var encodedAddress = encodeURIComponent(argv.address);
-var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;
+var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?key=YOURKEY&address=${encodedAddress}`;
 
 axios.get(geocodeUrl).then((response) => {
   if (response.data.status === 'ZERO_RESULTS') {
