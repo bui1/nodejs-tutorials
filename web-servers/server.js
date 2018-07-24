@@ -4,6 +4,8 @@ const fs = require("fs");
 
 var app = express(); // can configure later
 
+const port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + "/views/partials");
 
 app.use((req, res, next) => {//  register middleware
@@ -54,6 +56,6 @@ app.get('/about', (req,res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is up on port", 3000);
 });
